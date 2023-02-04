@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sso-frontend
+  namespace: ENVIRONMENT
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sso-frontend
+  template:
+    metadata:
+      labels:
+        app: sso-frontend
+        env: ENVIRONMENT
+    spec:
+      containers:
+      - name: sso-frontend
+        image: CONTAINER_IMAGE
+        imagePullPolicy: Always
+        envFrom:
+        - secretRef:
+            name: frontend-secret
+      nodeSelector:
+        beta.kubernetes.io/instance-type: t3.xlarge

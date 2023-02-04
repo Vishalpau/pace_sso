@@ -1,0 +1,39 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sso-backend
+  namespace: ENVIRONMENT
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sso-backend
+  template:
+    metadata:
+      labels:
+        app: sso-backend
+        env: ENVIRONMENT
+    spec:
+      containers:
+      - name: sso-backend
+        image: CONTAINER_IMAGE
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8003
+          name: backend-port
+        envFrom:
+        - secretRef:
+            name: backend-secret
+        - secretRef:
+            name: frontend-secret
+            
+      - name: redis
+        image: redis:5.0.4
+        command:
+          - redis-server
+        ports:
+        - containerPort: 6379
+          name: redis-port
+      nodeSelector:
+        beta.kubernetes.io/instance-type: t3.xlarge

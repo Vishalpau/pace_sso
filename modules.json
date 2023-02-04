@@ -1,0 +1,142 @@
+[
+    {
+        "model": "applications.modules",
+        "pk": 1,
+        "fields": {
+            "fkAppId": 1,
+            "moduleWebName": "Project Information Hub",
+            "moduleMobileName": "Project Information Hub",
+            "moduleCode": "ProjectInfo",
+            "active": true,
+            "targetPage": "project-info",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 2,
+        "fields": {
+            "fkAppId": 1,
+            "moduleWebName": "HSE Management",
+            "moduleMobileName": "HSE Management",
+            "moduleCode": "HSE",
+            "active": true,
+            "targetPage": "hse",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 3,
+        "fields": {
+            "fkAppId": 3,
+            "moduleWebName": "Assesments",
+            "moduleMobileName": "Assesments",
+            "moduleCode": "assessments",
+            "active": true,
+            "targetPage": "assesments",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 4,
+        "fields": {
+            "fkAppId": 3,
+            "moduleWebName": "Observations",
+            "moduleMobileName": "Observations",
+            "moduleCode": "observations",
+            "active": true,
+            "targetPage": "observations",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 5,
+        "fields": {
+            "fkAppId": 3,
+            "moduleWebName": "Compliance Protocols",
+            "moduleMobileName": "Compliance Protocols",
+            "moduleCode": "compliances",
+            "active": true,
+            "targetPage": "Compliance",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 6,
+        "fields": {
+            "fkAppId": 3,
+            "moduleWebName": "Permit Management",
+            "moduleMobileName": "Permit Management",
+            "moduleCode": "permits",
+            "active": true,
+            "targetPage": "permits",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 7,
+        "fields": {
+            "fkAppId": 3,
+            "moduleWebName": "Incident Management",
+            "moduleMobileName": "Incident Management",
+            "moduleCode": "incidents",
+            "active": true,
+            "targetPage": "incidents",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 8,
+        "fields": {
+            "fkAppId": 4,
+            "moduleWebName": "Action Tracker",
+            "moduleMobileName": "Action Tracker",
+            "moduleCode": "actions",
+            "active": true,
+            "targetPage": "actions",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 9,
+        "fields": {
+            "fkAppId": 1,
+            "moduleWebName": "Rapid Knowledge & Collaboration",
+            "moduleMobileName": "Rapid Knowledge & Collaboration",
+            "moduleCode": "knowledge",
+            "active": true,
+            "targetPage": "knowledge",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    },
+    {
+        "model": "applications.modules",
+        "pk": 10,
+        "fields": {
+            "fkAppId": 3,
+            "moduleWebName": "Environment Management",
+            "moduleMobileName": "Environment Management",
+            "moduleCode": "environments",
+            "active": true,
+            "targetPage": "environments",
+            "created": "2021-08-06T06:35:55.296Z",
+            "updated": "2021-08-06T06:35:55.296Z"
+        }
+    }
+]

@@ -1,0 +1,12 @@
+DEBUG=1
+SECRET_KEY_PACESCM=Pacescmsecretkey
+SECRET_KEY_SSO=ssosecretkey
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1] 192.168.99.100
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=pace_sso
+SQL_USER=postgres
+SQL_PASSWORD=1234
+SQL_HOST=localhost
+SQL_PORT=5432
+DATABASE=postgres
+COMPOSE_CONVERT_WINDOWS_PATHS=1
