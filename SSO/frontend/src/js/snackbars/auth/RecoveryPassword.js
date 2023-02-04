@@ -1,0 +1,344 @@
+import { CircularProgress } from '@material-ui/core';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import { withStyles } from '@material-ui/styles';
+import clsx from 'clsx';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { UserActions } from '../UserActions';
+import queryString from 'query-string'
+import Page from '../../../../src/components/Page';
+import { Box, Grid, Paper, Typography, TextField, Button } from '@material-ui/core';
+import GradientBG from './img/GradientBG.png';
+import google from './img/google.svg';
+import IconSimpleFacebook from './img/IconSimpleFacebook.svg';
+import linkedin from './img/linkedin.svg';
+import LogoImage from '../../../../public/LoginImg/logo.png';
+import LockIcon from '@material-ui/icons/Lock';
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import OtpInput from 'react-otp-input';
+//import './../../app.css';
+
+
+class RecoveryPassword extends Component {
+
+    render() {
+        const { classes } = this.props
+        return (
+            <Page className={classes.root} title="Login">
+                <Box className={classes.customcontentbox}
+                    display="flex"
+                    flexDirection="column"
+                    height="100%"
+                    justifyContent="center"
+                >
+                    <Grid container component="main" className={classes.root} >
+                        <Grid item xs={12} sm={4} md={6} className={classes.hidDestopView}>
+                            <Grid item
+                                //xs={{span: 12, order: 1}}
+                                //display={{ xs: 'none', sm: 'block' }}
+                                xs={12}
+                                sm={12}
+                                md={12}
+                                container
+                                direction="column"
+                                justify="center"
+                                alignItems="flex-end"
+                            >
+                                <div className={classes.leftPaper} elevation={0}>
+                                    <Typography variant="h1" className={classes.welcomTitleS} align="right" gutterBottom >
+                                        Create Account.
+                                    </Typography>
+                                    <Typography variant="body1" className={classes.welcomSubTitle} align="right" >
+                                        lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </Typography>
+                                </div>
+                            </Grid>
+                        </Grid>
+                        <Grid
+                            item
+                            xs={12}
+                            sm={8}
+                            md={6}
+                            component={Paper}
+                            elevation={0}
+                        >
+                            <div className={classes.paper} elevation={0}>
+                                <div className={classes.logoBoxStyle}>
+                                    <img className={classes.logoImg} src={LogoImage} title="Sign in" alt="Sign in" />
+                                </div>
+                                <Typography component="h1" variant="h5" className={classes.logTitle} >
+                                    Signin
+                                </Typography>
+
+                                <Grid item xs className={classes.mTB30}>
+                                    <Typography component="h5" variant="h5" className={classes.signupLabel} align="center" >
+                                        Enter your registered mobile number or email I'd to get a password recovery OTP
+                                    </Typography>
+                                </Grid>
+                                <form className={classes.form} autoComplete="off" noValidate>
+                                    <TextField
+                                        variant="outlined"
+                                        margin="normal"
+                                        //required
+                                        fullWidth
+                                        id="email"
+                                        label="Email Or Mobile Number"
+                                        name="email"
+                                        //autoComplete="email"
+                                        //autoFocus
+                                        className={classes.inputCustmStyl}
+                                    />
+                                    <Grid item xs>
+                                        <Button
+                                            type="submit"
+                                            fullWidth
+                                            variant="contained"
+                                            //color="primary"
+                                            className={classes.submitBtn}
+                                        >
+                                            SUBMIT
+                                        </Button>
+                                    </Grid>
+                                    <Grid
+                                        direction="column"
+                                        justify="center"
+                                        container
+                                    >
+                                        <Typography component="h5" variant="h5" className={classes.signinLabel} align="center" >
+                                            More ways to Signin
+                                        </Typography>
+                                    </Grid>
+                                    <Grid
+                                        container
+                                        direction="row"
+                                        justify="center"
+                                        alignItems="flex-end"
+                                    >
+                                        <button className={classes.mLR}><img className={classes.socilIconstyle} spacing={2} src={linkedin} title="Linkedin Account" alt="Linkedin Account" /></button>
+                                        <button className={classes.mLR}><img className={classes.socilIconstyle} spacing={2} src={google} title="Google Account" alt="Google Account" /></button>
+                                        <button className={classes.mLR}><img className={classes.socilIconstyle} spacing={2} src={IconSimpleFacebook} title="Facebook Account" alt="Facebook Account" /></button>
+
+                                    </Grid>
+                                </form>
+                            </div>
+                        </Grid>
+                        <Grid item xs={12} sm={4} md={6} className={classes.hidMobileView}>
+                            <Grid
+                                item
+                                xs={12}
+                                sm={12}
+                                md={12}
+                                container
+                                direction="column"
+                                justify="center"
+                                alignItems="flex-end"
+                            >
+                                <div className={classes.leftPaper} elevation={0}>
+                                    <Typography variant="h1" className={classes.welcomTitleS} align="right" gutterBottom >
+                                        Create Account.
+                                    </Typography>
+                                    <Typography variant="body1" className={classes.welcomSubTitle} align="right" >
+                                        lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </Typography>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Box>
+            </Page>
+        );
+    }
+}
+
+const useStyles = theme => ({
+    root: {
+        "& .MuiPaper-root": {
+            borderRadius: "100px",
+            backgroundColor: "transparent",
+        },
+        //height: '100vh',
+        backgroundImage: `url(${GradientBG})`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPositionX: '100%',
+    },
+    paperRoot: {
+        backgroundColor: 'transparent'
+    },
+    /*image: {
+      backgroundImage: 'url(https://source.unsplash.com/random)',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor:
+        theme.palette.type === 'light'
+          ? theme.palette.grey[50]
+          : theme.palette.grey[900],
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    },*/
+    paper: {
+        margin: theme.spacing(8, 16),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: "transparent",
+        [theme.breakpoints.down("sm")]: {
+            margin: theme.spacing(2, 2),
+            justify: 'flex-start',
+            alignItems: 'baseline',
+        },
+    },
+    leftPaper: {
+        //margin: theme.spacing(8, 3, 10, 40),
+        //padding: theme.spacing(0, 0, 14, 40),
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        padding: theme.spacing(0, 5, 14, 25),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(2, 2),
+        },
+    },
+    welcomSubTitle: {
+        margin: theme.spacing(0, 0, 0, 20),
+        color: '#F2F2F2',
+        lineHeight: '26px',
+        fontSize: '20px',
+        fontFamily: 'Montserrat-Medium',
+        [theme.breakpoints.down("sm")]: {
+            lineHeight: '18px',
+            fontSize: '12px',
+        },
+    },
+    /*avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main
+    },*/
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(1)
+    },
+    submitBtn: {
+        margin: theme.spacing(5, 0, 2),
+        backgroundColor: '#F28705',
+        fontSize: '14px',
+        fontFamily: 'Montserrat-Bold',
+        paddingTop: '15px',
+        paddingBottom: '15px',
+        color: '#ffffff',
+    },
+    logTitle: {
+        fontSize: 45,
+        fontFamily: 'Montserrat-Bold',
+        marginBottom: '15px',
+    },
+    logoBoxStyle: {
+        backgroundColor: '#16384F',
+        height: 115,
+        width: 115,
+        borderRadius: 100,
+        marginBottom: 35,
+        position: 'relative',
+    },
+    logoImg: {
+        maxWidth: '100%',
+        top: 45,
+        display: 'block',
+        position: 'absolute',
+    },
+    welcomTitleS: {
+        fontSize: '80px',
+        lineHeight: '80px',
+        color: '#F2F2F2',
+        fontFamily: 'Montserrat-SemiBold',
+        [theme.breakpoints.down("sm")]: {
+            lineHeight: '42px',
+            fontSize: '42px',
+            marginLeft: '55px',
+        },
+    },
+    signupLabel: {
+        color: '#16384F',
+        fontSize: '20px',
+        fontFamily: 'Montserrat-Regular',
+        lineHeight: '35px',
+        [theme.breakpoints.down("sm")]: {
+            textAlign: 'left',
+        },
+    },
+    mTB30: {
+        marginTop: '30px',
+        marginBottom: '30px',
+    },
+    signinLabel: {
+        color: '#F28705',
+        fontSize: '14px',
+        fontFamily: 'Montserrat-Bold',
+        lineHeight: '32px',
+        marginTop: '50px',
+        marginBottom: '10px',
+    },
+    mLR: {
+        margin: '0px 10px',
+    },
+    socilIconstyle: {
+        verticalAlign: 'middle',
+        padding: '5px',
+    },
+    inputCustmStyl: {
+        "& .MuiFormLabel-root.Mui-focused": {
+            color: '#F28705',
+        },
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: '#F28705',
+        },
+        "& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline": {
+            borderColor: '#F28705',
+        },
+        "& .MuiFormHelperText-root.Mui-error": {
+            color: '#F28705',
+        },
+        "& .MuiFormLabel-root.Mui-error": {
+            color: '#f28705',
+        },
+    },
+    forgotLinkSty: {
+        color: '#F28705',
+        fontSize: '12px',
+        fontFamily: 'Montserrat-Medium',
+    },
+    otpFieldstyle: {
+        "& input": {
+            width: '2em !important',
+            margin: theme.spacing(0, 0.5),
+            height: '3rem',
+            fontSize: '2rem',
+            borderRadius: '4px',
+            border: '1px solid rgba(0,0,0,0.3)',
+        },
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        padding: theme.spacing(1, 1.2),
+    },
+    hidDestopView: {
+        display: 'none',
+        [theme.breakpoints.down("sm")]: {
+            display: 'block',
+        },
+    },
+    hidMobileView: {
+        display: 'block',
+        [theme.breakpoints.down("sm")]: {
+            display: 'none',
+        },
+    },
+});
+
+function mapStateToProps(state, props) { return { user: state } }
+function mapDispatchToProps(dispatch) { return { dispatch }; }
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withStyles(useStyles, { withTheme: true })(RecoveryPassword));
