@@ -1,0 +1,522 @@
+.cubeSection {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    width: 1112px;
+    margin: auto;
+    position: relative;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    height: 445px;
+}
+/* .cubeSectionCenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+} */
+.cubeArea {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+.cubeArea.row1 {
+    top: 0px;
+    left: 0px;
+}
+.cubeArea.row-2 {
+    top: 145px;
+    left: 92px;
+}
+.cubeArea.row-3 {
+    top: 290px;
+    left: -3px;
+}
+.cubeArea.row-4 {
+    top: 432px;
+    left: 88px;
+}
+.cubeBox {
+    position: relative;
+    width: 165px;
+    height: 100px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+/* custom cubes*/
+.cubeBlank, .cubeInactive, .cubeAccessRestricted {pointer-events: none !important;}
+/* blank 3D cube */
+.cubeBlank .boxLayerLeft {
+    /* background: #EBEBEB;
+    pointer-events: none; */
+    background: #ffffff;
+    pointer-events: none;
+    /* border-bottom: 2px dashed #CAD1D6;
+    border-left: 2px dashed #CAD1D6;
+    border-right: 2px dashed #CAD1D6; */
+}
+.cubeBlank .boxLayerRight {
+    /* background: #EEEEEE;
+    pointer-events: none; */
+    background: #ffffff;
+    pointer-events: none;
+    /* border-bottom: 2px dashed #CAD1D6;
+    border-right: 2px dashed #CAD1D6; */
+}
+.cubeBlank .boxLayerTop {
+    /* background: #F2F2F2;
+    pointer-events: none; */
+    background: #ffffff;
+    pointer-events: none;
+    /* border-bottom: 2px dashed #CAD1D6;
+    border-left: 2px dashed #CAD1D6;
+    border-top: 2px dashed #CAD1D6;
+    border-right: 2px dashed #CAD1D6; */
+}
+.cubeBlank .cubeInnerText {display: none;}
+/* end blank 3D cube */
+/* inactive cube */
+.cubeInactive .boxLayerLeft {background: #C8C8CB;pointer-events: none;}
+.cubeInactive .boxLayerRight {background: #D8D8D8;pointer-events: none;}
+.cubeInactive .boxLayerTop {background: #E1E1E1;pointer-events: none;}
+.cubeInactive .cubeInnerText p {
+    color: #777777;
+    font-size: 14px;
+}
+.cubeInactive .cubeInnerText img {
+    filter: brightness(848484) invert(1);
+    opacity: 0.4;
+}
+/* end inactive cube */
+/* access restricted cube */
+.cubeAccessRestricted .boxLayerLeft {background: #7890A4;pointer-events: none;}
+.cubeAccessRestricted .boxLayerRight {background: #8FA6B9;pointer-events: none;}
+.cubeAccessRestricted .boxLayerTop {background: #97B0C5;pointer-events: none;}
+.cubeAccessRestricted .cubeInnerText p {
+    color: #ffffff;
+    font-size: 14px;
+}
+.cubeAccessRestricted .cubeInnerText img {
+    filter: brightness(0) invert(1);
+}
+/* end access restricted cube */
+
+
+.boxLayerLeft {
+    width: 82px;
+    height: 82px;
+    background: #0b5c7e;
+    transform: skew(180deg,210deg);
+    position: absolute;
+    top: 43px;
+    border-top: 0;
+    /* border-left: 2px solid #CAD1D6;
+    border-bottom: 2px solid #CAD1D6; */
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.boxLayerRight {
+    width: 83px;
+    height: 82px;
+    background: #06425C;
+    border: 0;
+    transform: skew(180deg,150deg);
+    position: absolute;
+    left: 81px;
+    top: 43px;
+    /* border-right: 2px solid #CAD1D6;
+    border-bottom: 2px solid #CAD1D6; */
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.boxLayerTop {
+    width: 96px;
+    height: 82px;
+    background: #0b6389;
+    border: 0;
+    transform: rotate(150deg) translate(-40px, -16px) skew(30deg, 0deg);
+    position: absolute;
+    left: -8px;
+    top: -15px;
+    /* border-bottom: 2px solid #CAD1D6;
+    border-left: 2px solid #CAD1D6; */
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.cubeInnerText {
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    top: 5px;
+    padding: 0px 24px;
+    justify-content: center;
+    left: 0;
+    right: 0;
+}
+.cubeInnerText i {
+    display: block;
+    margin-top: -16px;
+}
+.cubeInnerText i img {
+    width: 60px;
+}
+.cubeInnerText p {
+    font-family: 'Montserrat-Medium';
+    color: #ffffff;
+    margin-top: 24px;
+    margin-bottom: 0;
+    line-height: 16px;
+    font-size: 13px;
+}
+.cubeInnerText img {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    /*animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;*/
+}
+
+.cubeBox:hover .boxLayerLeft {
+    background: #FFA73C;
+    border-color: #FFF;
+}
+.cubeBox:hover .boxLayerRight {
+    background: #F28705;
+    border-color: #FFF;
+}
+.cubeBox:hover .boxLayerTop {
+    background: #FFC57E;
+    border-color: #FFF;
+}
+.cubeBox:hover .cubeInnerText img {
+  filter: brightness(0) invert(1);
+}
+/*@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}*/
+
+/*.cubeBox.cube2, .cubeBox.cube4 {
+    top: -105px; 
+}*/ 
+
+
+/* blank structure*/
+/* .cubeBox.cubeBlankPlain {
+    background-color: #FFF;
+    position: relative;
+    height: 77px;
+}
+.cubeBox.cubeBlankPlain:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-top: 50px solid transparent;
+    border-right: 82px solid transparent;
+    border-bottom: 50px solid #FFF;
+    border-left: 82px solid transparent;
+    top: -100px;
+}
+.cubeBox.cubeBlankPlain:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-top: 50px solid #FFF;
+    border-right: 82px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 82px solid transparent;
+    bottom: -100px;
+} */
+
+
+
+/* start media query css section */
+@media(max-width:1024px){
+    .cubeSection {
+        width: 920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cubeArea.row-2 {
+        top: 135px;
+        left: 76px;
+    }
+    .cubeArea.row-3 {
+        top: 268px;
+        left: -2px;
+    }
+    .cubeArea.row-4 {
+        top: 400px;
+        left: 74px;
+    }
+    .cubeBox {
+        width: 154px;
+        height: 110px;
+        margin: 0px auto;
+    }
+    .boxLayerLeft {
+        width: 72px;
+        height: 82px;
+        top: 34px;
+        left: 5px;
+    }
+    .boxLayerRight {
+        width: 72px;
+        height: 82px;
+        left: 77px;
+        top: 34px;
+    }
+    .boxLayerTop {
+        width: 84px;
+        height: 72px;
+        left: -8px;
+        top: -16px;
+    }
+    .cubeInnerText i img {
+        width: 50px;
+    }
+    .cubeInnerText p {
+        font-family: 'Montserrat-Medium' !important;
+        font-size: 12px !important;
+        line-height: 16px;
+    }
+}
+
+@media(max-width:800px){
+    .cubeSection {
+        width: 705px;
+    }
+    .cubeArea.row-2 {
+        top: 97px;
+        left: 54px;
+    }
+    .cubeArea.row-3 {
+        top: 194px;
+        left: -6px;
+    }
+    .cubeBox {
+        width: 114px;
+        height: 50px;
+        margin: 0;
+    }
+    .boxLayerLeft {
+        width: 53px;
+        height: 62px;
+        top: 17px;
+        left: 7px;
+    }
+    .boxLayerRight {
+        width: 55px;
+        height: 62px;
+        left: 60px;
+        top: 16px;
+    }
+    .boxLayerTop {
+        width: 65px;
+        height: 53px;
+        left: -14px;
+        top: -19px;
+    }
+    .cubeInnerText {
+        /* top: 0px;
+        padding: 0px 14px;
+        left: 9px;
+        width: calc(100% - 17px); */
+        top: 0px;
+        padding: 0px 5px;
+        left: 9px;
+        width: calc(100% - 12px);
+        line-height: 15px;
+    }
+    .cubeInnerText i {
+        margin-top: -15px;
+    }
+    .cubeInnerText i img {
+        width: 32px;
+    }
+    .cubeInnerText p {
+        font-size: 11px !important;
+        line-height: 12px;
+        margin-top: 20px;
+    }
+    .cubeArea.row-4 {
+        top: 293px;
+        left: 48px;
+    }
+}  
+@media(max-width:480px){      
+    .cubeSection {
+        display: block;
+        width: 394px;
+        min-height: 100%;
+        max-height: 100%;
+        height: 364vh;
+    }
+    .cubeArea.row1 {
+        top: 0px;
+        left: 0px;
+    }
+    .cubeArea.row-2 {
+        top: 140px;
+        left: 100px;
+    }
+    .cubeArea.row-3 {
+        top: 0px;
+        left: 200px;
+    }
+    .cubeArea.row-4 {
+        top: 1535px;
+        left: 100px;
+    }
+    .cubeArea.row-4 .cubeBox {
+        margin: 0px 16px 65px 16px;
+    }
+    .cubeArea {
+        /* display: block;
+        justify-content: normal;
+        align-items: center;
+        position: relative; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        flex-direction: column;
+    }
+    .cubeBox {
+        position: relative;
+        width: 165px;
+        height: 120px;
+        margin: 0px 16px 160px 16px;
+        cursor: pointer;
+        float: left;
+    }
+    .cubeBlank {
+        display: none;
+    }
+
+    .boxLayerLeft {
+        width: 82px;
+        height: 82px;
+        background: #0b5c7e;
+        transform: skew(180deg,210deg);
+        position: absolute;
+        top: 43px;
+        left: 0px;
+        border-top: 0;
+        /* border-left: 2px solid #CAD1D6;
+        border-bottom: 2px solid #CAD1D6; */
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+    
+    .boxLayerRight {
+        width: 82px;
+        height: 82px;
+        background: #06425C;
+        border: 0;
+        transform: skew(180deg,150deg);
+        position: absolute;
+        left: 82px;
+        top: 43px;
+        /* border-right: 2px solid #CAD1D6;
+        border-bottom: 2px solid #CAD1D6; */
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+    
+    .boxLayerTop {
+        width: 96px;
+        height: 82px;
+        background: #0b6389;
+        border: 0;
+        transform: rotate(150deg) translate(-40px, -16px) skew(30deg, 0deg);
+        position: absolute;
+        left: -8px;
+        top: -15px;
+        /* border-bottom: 2px solid #CAD1D6;
+        border-left: 2px solid #CAD1D6; */
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+    
+    .cubeInnerText {
+        position: relative;
+        text-align: center;
+        top: 5px;
+        padding: 0px 24px;
+        justify-content: center;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+    }
+    .cubeInnerText i {
+        display: block;
+        margin-top: -15px;
+    }
+    .cubeInnerText i img {
+        width: 60px;
+    }
+    .cubeInnerText p {
+        font-family: 'Montserrat-Medium';
+        color: #ffffff;
+        margin-top: 25px;
+        margin-bottom: 0;
+        line-height: 19px;
+        font-size: 14px;
+    }
+    .cubeInnerText img {
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        /*animation-duration: 2s;
+        animation-iteration-count: infinite;
+        transform-origin: bottom;*/
+    }
+}
+@media(max-width:376px){
+    .cubeBox {
+        margin: 0px 0px 160px 0px;
+    }
+    .cubeArea.row-2 {
+        top: 140px;
+        left: 87px;
+    }
+    .cubeArea.row-3 {
+        top: 0px;
+        left: 175px;
+    } 
+    .cubeArea.row-4 {
+        top: 1540px;
+        left: 72px;
+    } 
+}
